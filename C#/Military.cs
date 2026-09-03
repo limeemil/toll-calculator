@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace TollFeeCalculator
 {
-    public class Car : Vehicle
+    public class Military : Vehicle
     {
         public String GetVehicleType()
         {
-            return "Car";
+            return "Military";
         }
 
-        public bool IsTollFree { get; } = false;
+        public bool IsTollFree { get; } = true;
     }
 }
