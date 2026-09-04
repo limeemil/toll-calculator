@@ -65,7 +65,7 @@ public class TollCalculator
         else return 0;
     }
 
-    private Boolean IsTollFreeDate(DateTime date)
+    private static Boolean IsTollFreeDate(DateTime date)
     {
         int year = date.Year;
         int month = date.Month;
@@ -75,14 +75,14 @@ public class TollCalculator
 
         if (year == 2013)
         {
-            if (month == 1 && day == 1 ||
-                month == 3 && (day == 28 || day == 29) ||
-                month == 4 && (day == 1 || day == 30) ||
-                month == 5 && (day == 1 || day == 8 || day == 9) ||
-                month == 6 && (day == 5 || day == 6 || day == 21) ||
-                month == 7 ||
-                month == 11 && day == 1 ||
-                month == 12 && (day == 24 || day == 25 || day == 26 || day == 31))
+            if (month == (int)Months.January && day == 1 ||
+                month == (int)Months.March && (day == 28 || day == 29) ||
+                month == (int)Months.April && (day == 1 || day == 30) ||
+                month == (int)Months.May && (day == 1 || day == 8 || day == 9) ||
+                month == (int)Months.June && (day == 5 || day == 6 || day == 21) ||
+                month == (int)Months.July && day == 1 ||
+                month == (int)Months.November && day == 1 ||
+                month == (int)Months.December && (day == 24 || day == 25 || day == 26 || day == 31))
             {
                 return true;
             }
@@ -98,5 +98,21 @@ public class TollCalculator
         Diplomat = 3,
         Foreign = 4,
         Military = 5
+    }
+
+    private enum Months
+    {
+        January = 1,
+        February = 2,
+        March = 3,
+        April = 4,
+        May = 5,
+        June = 6,
+        July = 7,
+        August = 8,
+        September = 9,
+        October = 10,
+        November = 11,
+        December = 12
     }
 }
