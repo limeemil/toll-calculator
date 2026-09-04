@@ -9,7 +9,8 @@ namespace TollFeeCalculator
     public interface Vehicle
     {
         String GetVehicleType();
+
+        public bool IsTollFree { get; }
     }
 
-    public bool IsTollFree { get; }
 }
