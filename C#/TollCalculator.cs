@@ -71,7 +71,7 @@ public class TollCalculator
         int month = date.Month;
         int day = date.Day;
 
-        if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) return true;
+        if (TollFeeSchedule.IsTollFreeDate(date)) return true;
 
         if (year == 2013)
         {
